@@ -72,8 +72,8 @@ export default function Home() {
           className="object-cover"
           priority
         />
-        {/* 前景：hero-illustration を中央に配置 */}
-        <div className="absolute inset-0 flex items-center justify-center z-10" style={{ paddingTop: "4%" }}>
+        {/* 前景：PC用 */}
+        <div className="hidden md:flex absolute inset-0 items-center justify-center z-10" style={{ paddingTop: "4%" }}>
           <Image
             src="/images/hero-illustration.png"
             alt="メインビジュアル"
@@ -81,6 +81,17 @@ export default function Home() {
             height={443}
             className="object-contain"
           />
+        </div>
+        {/* 前景：スマホ用 ↓ height: "Xvh" でサイズ調整（例: "60vh", "80vh"） */}
+        <div className="flex md:hidden absolute inset-0 items-center justify-center z-10">
+          <div className="relative" style={{ width: "100%", height: "100vh" }}>
+            <Image
+              src="/images/hero-illustration-phone.png"
+              alt="メインビジュアル"
+              fill
+              className="object-cover"
+            />
+          </div>
         </div>
       </section>
 
@@ -128,7 +139,8 @@ export default function Home() {
       <section className="bg-white pt-20 px-6">
         <div className="max-w-2xl mx-auto">
           <SectionLabel text="ACTION" className="text-xs" />
-          <h2 className="text-xl font-bold text-center leading-relaxed text-black mb-12">
+          {/* スマホ: text-base を変更 / PC: md:text-xl を変更 */}
+          <h2 className="text-base md:text-xl font-bold text-center leading-relaxed text-black mb-12">
             日本に適正な金融教育の機会をつくるために
             <br />
             1回でわかりやすく学べるお金の考え方の
@@ -140,7 +152,7 @@ export default function Home() {
             alt="未来投資2.0セミナー"
             width={900}
             height={764}
-            style={{ width: "70%", height: "auto" }}
+            style={{ width: "90%", height: "auto" }}
             className="rounded mx-auto block"
           />
           {/* 三角形（セクション境界） */}
@@ -159,7 +171,7 @@ export default function Home() {
       {/* ===== FEATURES（グレー）===== */}
       <section className="bg-[#efefef] py-20 px-6">
         <div className="max-w-2xl mx-auto flex flex-col items-center">
-          <div className="relative w-full h-32 mb-12">
+          <div className="relative w-full h-24 md:h-32 mb-12">
             <Image
               src="/images/features-smartphone.png"
               alt="スマートフォン送金イラスト"
@@ -214,7 +226,8 @@ export default function Home() {
           <h2 className="text-xm font-bold text-center text-black mb-10">
             オンライン勉強会の開催
           </h2>
-          <div className="relative w-64 h-52 mb-10">
+          {/* オンラインセミナー画像: スマホ → w-XX h-XX / PC → md:w-64 md:h-52 を変更 */}
+          <div className="relative w-44 h-36 md:w-64 md:h-52 mb-10">
             <Image
               src="/images/seminar-online.png"
               alt="オンラインセミナー"
@@ -226,13 +239,13 @@ export default function Home() {
             会場セミナーをはじめ、オンラインセミナーも開催しております。Ratel
             公式の講師陣が全国各地で開催しているのでお気軽にご参加下さい。開催場所や日時などは下記の公式LINE@のお友だち追加で確認頂けます。
           </p>
+          {/* セミナー画面画像: スマホ → w-[XX%] / PC → md:w-[60%] を変更 */}
           <Image
             src="/images/seminar-laptop.jpg"
             alt="セミナー画面"
             width={700}
             height={381}
-            style={{ width: "60%", height: "auto" }}
-            className="rounded mx-auto block"
+            className="rounded mx-auto block w-[90%] md:w-[60%]"
           />
         </div>
       </section>
@@ -256,22 +269,22 @@ export default function Home() {
           <div className="w-1/2 bg-[#F7C52D]" />
         </div>
         {/* コンテンツ */}
-        <div className="relative z-10 max-w-3xl mx-auto py-16 px-8">
+        <div className="relative z-10 max-w-3xl mx-auto py-16 px-4 md:px-8">
           <SectionLabel text="OWNER" className="text-xs" />
           {/* CEOカード（白+黄をまたぐ） */}
-          <div className="border border-gray-200 bg-white rounded-lg p-8 mb-10 flex items-center justify-between">
-            <div className="flex-1 pr-8">
-              <div className="flex items-center gap-2 mb-6">
+          <div className="border border-gray-200 bg-white rounded-lg p-4 md:p-8 mb-10 flex items-center justify-between">
+            <div className="flex-1 pr-3 md:pr-8">
+              <div className="flex items-center gap-2 mb-4 md:mb-6">
                 <LightningBolt className="text-[#C4A43A]" size={18} />
                 <span className="font-bold text-black text-base tracking-[0.15em]">Ratel</span>
               </div>
               <p className="text-xs text-gray-500 mb-1">CEO</p>
-              <h3 className="text-3xl font-bold text-black">サンプル</h3>
-              <p className="text-xs text-gray-400 mb-6">yoichi takeda</p>
-              <p className="text-sm text-gray-600">（日本）株式会社 Ratel</p>
-              <p className="text-sm text-gray-600">（香港）Ratel LIMITED</p>
+              <h3 className="text-xl md:text-3xl font-bold text-black">サンプル</h3>
+              <p className="text-xs text-gray-400 mb-4 md:mb-6">yoichi takeda</p>
+              <p className="text-xs md:text-sm text-gray-600">（日本）株式会社 Ratel</p>
+              <p className="text-xs md:text-sm text-gray-600">（香港）Ratel LIMITED</p>
             </div>
-            <Placeholder label="CEO写真" className="w-44 h-52 rounded flex-shrink-0" />
+            <Placeholder label="CEO写真" className="w-32 h-40 md:w-44 md:h-52 rounded flex-shrink-0" />
           </div>
           {/* 経歴（白側） */}
 
