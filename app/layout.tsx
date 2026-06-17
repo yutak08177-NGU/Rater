@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "CLOUD EDGE",
+  title: "Ratel",
   description: "日本に適正な金融教育の機会をつくり各家庭でお金の教育を受けれる社会を実現する",
 };
 
