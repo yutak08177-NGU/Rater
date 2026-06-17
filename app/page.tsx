@@ -63,7 +63,7 @@ export default function Home() {
       {/* ===== HERO ===== */}
       <section className="flex" style={{ minHeight: "100vh" }}>
         {/* 左：黄色 */}
-        <div className="w-1/2 bg-[#F7C52D] flex flex-col justify-between px-14 py-16">
+        <div className="w-1/2 bg-[#F7C52D] flex flex-col justify-between pr-10 pl-14 py-16 items-end">
           <div />
           <div>
             <h1 className="text-5xl font-black leading-tight text-black mb-8">
