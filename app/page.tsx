@@ -1,18 +1,5 @@
 import Image from "next/image";
 
-function LightningBolt({ className = "", size = 24 }: { className?: string; size?: number }) {
-  return (
-    <svg
-      width={size}
-      height={Math.round(size * 1.35)}
-      viewBox="0 0 20 27"
-      fill="currentColor"
-      className={className}
-    >
-      <path d="M13 0L3 15h7L7 27l13-16h-7z" />
-    </svg>
-  );
-}
 
 function Placeholder({ label, className = "" }: { label: string; className?: string }) {
   return (
@@ -56,14 +43,14 @@ function GoldButton({
 
 export default function Home() {
   const mapsUrl =
-    "https://www.google.com/maps/search/?api=1&query=〒163-1055+東京都新宿区西新宿3-7-1-2";
+    "https://www.google.com/maps/search/?api=1&query=東京都新宿区西新宿5-5-1+ザ・パークハウス西新宿";
   const mapsEmbedUrl =
-    "https://maps.google.com/maps?q=東京都新宿区西新宿3-7-1-2&hl=ja&z=16&output=embed";
+    "https://maps.google.com/maps?q=東京都新宿区西新宿5-5-1+ザ・パークハウス西新宿&hl=ja&z=16&output=embed";
 
   return (
     <main>
       {/* ===== HERO ===== */}
-      <section className="relative" style={{ height: "88vh" }}>
+      <section className="relative h-screen md:h-[88vh]">
         {/* 背景画像 */}
         <Image
           src="/images/hero-back.webp"
@@ -82,16 +69,21 @@ export default function Home() {
             className="object-contain"
           />
         </div>
-        {/* 前景：スマホ用 ↓ height: "Xvh" でサイズ調整（例: "60vh", "80vh"） */}
-        <div className="flex md:hidden absolute inset-0 items-center justify-center z-10">
-          <div className="relative" style={{ width: "100%", height: "100vh" }}>
+        {/* 前景：スマホ用イラスト */}
+        <div className="flex md:hidden absolute inset-0 z-10">
+          <div className="relative w-full h-full">
             <Image
               src="/images/hero-illustration-phone.png"
               alt="メインビジュアル"
               fill
-              className="object-cover"
+              className="object-cover object-top"
             />
           </div>
+        </div>
+        {/* ロゴ（スマホ・白エリア右上）← ロゴ画像に差し替え可能 */}
+        <div className="flex md:hidden absolute top-[22%] right-0 w-1/2 justify-center z-20 flex-col items-center gap-1">
+          <Image src="/images/ratel-icon.png" alt="Ratel" width={80} height={46} className="object-contain" />
+          <span className="text-xs font-bold tracking-[0.2em] text-black">Ratel</span>
         </div>
       </section>
 
@@ -102,7 +94,7 @@ export default function Home() {
           <SectionLabel text="CONCEPT" className="text-xs" dark />
           {/* ロゴ文字サイズ → text-2xl を変更 */}
           <div className="flex justify-center items-center gap-3 mb-8">
-            <LightningBolt className="text-[#C49A00]" size={28} />
+            <Image src="/images/ratel-icon-hooter.png" alt="Ratel" width={40} height={24} className="object-contain" />
             <span className="text-2xl font-bold tracking-[0.2em]">Ratel</span>
           </div>
           {/* キャッチコピーサイズ → text-sm を変更 */}
@@ -275,19 +267,37 @@ export default function Home() {
           <div className="border border-gray-200 bg-white rounded-lg p-4 md:p-8 mb-10 flex items-center justify-between">
             <div className="flex-1 pr-3 md:pr-8">
               <div className="flex items-center gap-2 mb-4 md:mb-6">
-                <LightningBolt className="text-[#C4A43A]" size={18} />
+                <Image src="/images/ratel-icon.png" alt="Ratel" width={44} height={26} className="object-contain" />
                 <span className="font-bold text-black text-base tracking-[0.15em]">Ratel</span>
               </div>
               <p className="text-xs text-gray-500 mb-1">CEO</p>
-              <h3 className="text-xl md:text-3xl font-bold text-black">サンプル</h3>
-              <p className="text-xs text-gray-400 mb-4 md:mb-6">yoichi takeda</p>
-              <p className="text-xs md:text-sm text-gray-600">（日本）株式会社 Ratel</p>
-              <p className="text-xs md:text-sm text-gray-600">（香港）Ratel LIMITED</p>
+              <h3 className="text-xl md:text-3xl font-bold text-black">名倉 健太</h3>
+              <p className="text-xs text-gray-400 mb-4 md:mb-6">kenta nagura</p>
+              <p className="text-xs md:text-sm text-gray-600">Ratel 株式会社</p>
             </div>
             <Placeholder label="CEO写真" className="w-32 h-40 md:w-44 md:h-52 rounded flex-shrink-0" />
           </div>
           {/* 経歴（白側） */}
-
+          <div className="space-y-6">
+            <div>
+              <span className="inline-block bg-[#1a1a1a] text-white text-xs font-bold px-3 py-1 rounded mb-3">20 代</span>
+              <p className="text-sm text-gray-700 leading-relaxed">
+                高等学校、専門学校、大学で教育業に携わる。
+              </p>
+            </div>
+            <div>
+              <span className="inline-block bg-[#1a1a1a] text-white text-xs font-bold px-3 py-1 rounded mb-3">30 代</span>
+              <p className="text-sm text-gray-700 leading-relaxed">
+                不動産、保険、その他 金融商品の営業で各トップセールを上げる。
+              </p>
+            </div>
+            <div>
+              <span className="inline-block bg-[#1a1a1a] text-white text-xs font-bold px-3 py-1 rounded mb-3">現在</span>
+              <p className="text-sm text-gray-700 leading-relaxed">
+                金融教育事業を立ち上げ、日本国内の法人・個人に向けに、お金や投資の考え方を学べるセミナーを全国やオンラインで主宰。
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -313,10 +323,10 @@ export default function Home() {
         </div>
         <div className="relative z-10 max-w-3xl mx-auto py-16 px-8">
           <SectionLabel text="COMPANY" className="text-xs" />
-          <h3 className="text-xl font-bold text-black mb-4">株式会社 Ratel</h3>
+          <h3 className="text-xl font-bold text-black mb-4">Ratel 株式会社</h3>
           <p className="text-sm text-black">TOKYO OFFICE</p>
-          <p className="text-sm text-black mt-1">〒163-1055</p>
-          <p className="text-sm text-black">東京都新宿区西新宿3-7-1-2</p>
+          <p className="text-sm text-black mt-1">〒160-0023</p>
+          <p className="text-sm text-black">東京都新宿区西新宿5-5-1 ザ・パークハウス西新宿タワー60</p>
           {/* 埋め込みGoogleマップ */}
           <div className="mt-6 w-full" style={{ height: "380px" }}>
             <iframe
@@ -346,7 +356,7 @@ export default function Home() {
       {/* ===== FOOTER ===== */}
       <footer className="bg-[#1a1a1a] py-12 flex flex-col items-center gap-4">
         <div className="flex items-center gap-2">
-          <LightningBolt className="text-[#C4A43A]" size={18} />
+          <Image src="/images/ratel-icon-hooter.png" alt="Ratel" width={28} height={16} className="object-contain" />
           <span className="text-white font-bold tracking-[0.2em]">Ratel</span>
         </div>
         <p className="text-gray-400 text-xs">©2021 Ratel all rights reserved.</p>
