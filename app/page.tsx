@@ -176,7 +176,7 @@ export default function Home() {
             <br />
             アメリカやイギリスのような金融先進国の
             <br />
-            水準で金融教育の提供しています
+            水準で金融教育の提供をしています
           </h2>
           <p className="text-xs leading-loose text-black mb-10 w-full">
             金融教育の知識の乏しい日本の一般家庭に対して、何が投資で何が投機か適正な判断を下せるための教育機会を提供しております。
@@ -247,8 +247,8 @@ export default function Home() {
         <div className="max-w-sm mx-auto flex flex-col items-center">
           <p className="text-white text-sl mb-8 text-center">開催情報やお申込みはこちら</p>
           <GoldButton href="https://lin.ee/rYFBgA7" className="mb-4"><span className="text-lg">公式LINE</span> &nbsp;&nbsp; お友だち追加</GoldButton>
-          <GoldButton href="mailto:info.Ratel@ratel-ltd.tokyo">
-            &nbsp; info.Ratel@ratel-ltd.tokyo
+          <GoldButton href="mailto:Ratel@ratel-ltd.tokyo">
+            &nbsp; Ratel@ratel-ltd.tokyo
           </GoldButton>
         </div>
       </section>
@@ -309,8 +309,8 @@ export default function Home() {
             お問合せは公式LINEまたはe-mailをご利用下さい
           </p>
           <GoldButton href="#" className="mb-4">公式LINE &nbsp;&nbsp; お友だち追加</GoldButton>
-          <GoldButton href="mailto:info.Ratel@gmail.com">
-            ✉ &nbsp; info.Ratel@gmail.com
+          <GoldButton href="mailto:Ratel@ratel-ltd.tokyo">
+            &nbsp; Ratel@ratel-ltd.tokyo
           </GoldButton>
         </div>
       </section>
