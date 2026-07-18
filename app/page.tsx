@@ -308,7 +308,7 @@ export default function Home() {
           <p className="text-white text-sm text-center mb-8">
             お問合せは公式LINEまたはe-mailをご利用下さい
           </p>
-          <GoldButton href="#" className="mb-4">公式LINE &nbsp;&nbsp; お友だち追加</GoldButton>
+          <GoldButton href="https://lin.ee/rYFBgA7" className="mb-4"><span className="text-lg">公式LINE</span> &nbsp;&nbsp; お友だち追加</GoldButton>
           <GoldButton href="mailto:Ratel@ratel-ltd.tokyo">
             &nbsp; Ratel@ratel-ltd.tokyo
           </GoldButton>
