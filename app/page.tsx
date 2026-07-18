@@ -359,7 +359,7 @@ export default function Home() {
           <Image src="/images/ratel-icon-hooter.png" alt="Ratel" width={28} height={16} className="object-contain" />
           <span className="text-white font-bold tracking-[0.2em]">Ratel</span>
         </div>
-        <p className="text-gray-400 text-xs">©2021 Ratel all rights reserved.</p>
+        <p className="text-gray-400 text-xs">©2026 Ratel all rights reserved.</p>
       </footer>
     </main>
   );
