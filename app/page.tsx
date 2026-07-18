@@ -229,7 +229,7 @@ export default function Home() {
           </div>
           <p className="text-xs leading-loose text-black text-center mb-10">
             会場セミナーをはじめ、オンラインセミナーも開催しております。Ratel
-            公式の講師陣が全国各地で開催しているのでお気軽にご参加下さい。開催場所や日時などは下記の公式LINE@のお友だち追加で確認頂けます。
+            公式の講師陣が全国各地で開催しているのでお気軽にご参加下さい。開催場所や日時などは下記の公式LINEのお友だち追加で確認頂けます。
           </p>
           {/* セミナー画面画像: スマホ → w-[XX%] / PC → md:w-[60%] を変更 */}
           <Image
@@ -246,9 +246,9 @@ export default function Home() {
       <section className="bg-[#1a1a1a] py-16 px-6">
         <div className="max-w-sm mx-auto flex flex-col items-center">
           <p className="text-white text-sl mb-8 text-center">開催情報やお申込みはこちら</p>
-          <GoldButton href="#" className="mb-4">LINE@ &nbsp;&nbsp; お友だち追加</GoldButton>
-          <GoldButton href="mailto:info.Ratel@gmail.com">
-            ✉ &nbsp; info.Ratel@gmail.com
+          <GoldButton href="https://lin.ee/rYFBgA7" className="mb-4"><span className="text-lg">公式LINE</span> &nbsp;&nbsp; お友だち追加</GoldButton>
+          <GoldButton href="mailto:info.Ratel@ratel-ltd.tokyo">
+            &nbsp; info.Ratel@ratel-ltd.tokyo
           </GoldButton>
         </div>
       </section>
@@ -306,9 +306,9 @@ export default function Home() {
         <div className="max-w-sm mx-auto">
           <SectionLabel text="CONTACT" dark className="text-xs" />
           <p className="text-white text-sm text-center mb-8">
-            お問合せはLINE@またはe-mailをご利用下さい
+            お問合せは公式LINEまたはe-mailをご利用下さい
           </p>
-          <GoldButton href="#" className="mb-4">LINE@ &nbsp;&nbsp; お友だち追加</GoldButton>
+          <GoldButton href="#" className="mb-4">公式LINE &nbsp;&nbsp; お友だち追加</GoldButton>
           <GoldButton href="mailto:info.Ratel@gmail.com">
             ✉ &nbsp; info.Ratel@gmail.com
           </GoldButton>
